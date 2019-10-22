@@ -13,6 +13,7 @@ Bank::Bank() {
 
 Bank::~Bank() {
 	cout << "Destructor " << endl;
+
 	for (int i = 0; i < 5; i++) {
 		delete[] accounts[i];
 	}
