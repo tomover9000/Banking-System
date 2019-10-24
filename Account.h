@@ -4,15 +4,18 @@ class Account
 private :
 	bool isOpen;
 	int accountNr;
-	int balance;
+	double balance;
 public :
 	Account(int);
+	Account(const Account& obj);
 	//~Account();
 	void open(int);
 	void close();
 	void deposit(int);
 	void withdraw(int);
-	int checkBal();
+	void print();
+	void intrest(int);
+	double checkBal();
 	bool checkOpen();
 };
 

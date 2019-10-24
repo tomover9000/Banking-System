@@ -9,6 +9,17 @@ Account::Account(int number) {
 	accountNr = number;
 }
 
+Account::Account(const Account& obj) {
+	isOpen = obj.isOpen;
+	balance = obj.balance;
+	accountNr = obj.accountNr;
+}
+
+void Account::print() {
+	cout << "Numar_cont " << accountNr << endl;
+	cout << "Balance: " << balance << endl;
+}
+
 void Account::open(int initAmount) {
 	//Opening the account
 	isOpen = true;
@@ -17,12 +28,12 @@ void Account::open(int initAmount) {
 }
 
 bool Account::checkOpen() {
-	if (isOpen) {
-		return true;
-	}
-	else {
-		return false;
-	}
+	return isOpen;
+}
+
+void Account::intrest(int intrest) {
+	balance = balance + balance * ((double)intrest / 100);
+	cout << "Intrest " << intrest << "balance " << balance << endl;
 }
 
 void Account::close() {
@@ -56,6 +67,6 @@ void Account::withdraw(int amount) {
 	}
 }
 
-int Account::checkBal() {
+double Account::checkBal() {
 	return balance;
 }

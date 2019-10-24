@@ -14,6 +14,8 @@ public :
 	void checkBalance(int);
 	void deposit(int, int);
 	void withdraw(int, int);
+	void print();
+	void intrest(int);
 	Account* getUnallocAcc();
 };
 

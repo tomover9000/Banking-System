@@ -4,6 +4,11 @@ using namespace std;
 
 int main()
 {
+	Account acc1(100);
+	acc1.open(100);
+	acc1.print();
+	Account acc2 = acc1;
+	acc2.print();
 	Bank bank;
 	char c;
 	int sum, nr;
@@ -40,6 +45,15 @@ int main()
 			cout << "Introduceti numarul contului: ";
 			cin >> nr;
 			bank.closeAcc(nr);
+			break;
+		case 'p':
+			bank.print();
+			break;
+		case 'i':
+			int in_rate;
+			cout << "Intrest_rate: ";
+			cin >> in_rate;
+			bank.intrest(in_rate);
 			break;
 		}
 	} while (c != 'e');

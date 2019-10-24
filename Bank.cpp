@@ -20,6 +20,22 @@ Bank::~Bank() {
 	delete[] accounts;
 }
 
+void Bank::intrest(int intrest) {
+	for (int i = 0; i < nrAcc; i++) {
+		if (accounts[i]->checkOpen() == 1) {
+			accounts[i]->intrest(intrest);
+		}
+	}
+}
+
+void Bank::print() {
+	for (int i = 0; i < nrAcc; i++) {
+		if (accounts[i]->checkOpen()) {
+			accounts[i]->print();
+		}
+	}
+}
+
 void Bank::openAcc(int initSum) {
 	if (openAccounts < nrAcc) {
 		getUnallocAcc()->open(initSum);
